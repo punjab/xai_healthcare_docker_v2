@@ -1,4 +1,4 @@
-FROM nvidia/cuda
+FROM nvidia/cuda:11.2.0-runtime-ubuntu20.04
 ADD https://xai-healthcare.s3.amazonaws.com/vgg16_ft.pth .
 COPY . /usr/app
 EXPOSE 80

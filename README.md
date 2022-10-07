@@ -74,3 +74,10 @@ Further
 So G4dn it is!
 
 	So we found G4dn-xlarge as the smalled Instance we could find.
+
+# So we have CUDA compatible Instance 
+
+```
+ubuntu@ip-172-31-30-17:~$ lspci| grep NVIDIA
+00:1e.0 3D controller: NVIDIA Corporation TU104GL [Tesla T4] (rev a1)
+```
