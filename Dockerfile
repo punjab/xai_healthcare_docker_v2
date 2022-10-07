@@ -1,4 +1,6 @@
 FROM nvidia/cuda:11.2.0-runtime-ubuntu20.04
+ENV TORCH_CUDA_ARCH_LIST=Turing
+ARG TORCH_CUDA_ARCH_LIST=Turing
 ADD https://xai-healthcare.s3.amazonaws.com/vgg16_ft.pth .
 COPY . /usr/app
 EXPOSE 80
