@@ -37,7 +37,7 @@ def get_device():
     Returns CUDA or CPU Device
     '''
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    # print("Using " + torch.cuda.get_device_name(device))
+    print("Using " + torch.cuda.get_device_name(device))
     # device = torch.device("cpu")
     
     return device

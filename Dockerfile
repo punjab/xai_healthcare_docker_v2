@@ -5,8 +5,9 @@ ADD https://xai-healthcare.s3.amazonaws.com/vgg16_ft.pth .
 COPY . /usr/app
 EXPOSE 80
 WORKDIR /usr/app
-USER root
 RUN apt-get update -y
+RUN apt-get install cuda -y
+sudo apt-get install nvidia-gds -y
 RUN apt-get install ffmpeg libsm6 libxext6 -y
 RUN set -xe \
     && apt-get update \
