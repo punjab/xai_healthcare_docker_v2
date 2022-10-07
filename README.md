@@ -81,3 +81,8 @@ So G4dn it is!
 ubuntu@ip-172-31-30-17:~$ lspci| grep NVIDIA
 00:1e.0 3D controller: NVIDIA Corporation TU104GL [Tesla T4] (rev a1)
 ```
+
+# Nvidia Issue remains on docker image
+
+Fix 1 Attempt:
+https://stackoverflow.com/questions/59691207/docker-build-with-nvidia-runtime
