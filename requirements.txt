@@ -8,3 +8,4 @@ Pillow==9.2.0
 scikit-image==0.19.3
 streamlit==1.11.1
 torchvision==0.13.1
+transformers==4.22.2
