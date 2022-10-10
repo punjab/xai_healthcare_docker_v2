@@ -16,4 +16,4 @@ RUN set -xe \
 RUN pip install --upgrade pip
 RUN pip install torch --extra-index-url https://download.pytorch.org/whl/cu116
 RUN pip install -r ./requirements.txt
-CMD streamlit run vgg16_streamlit.py --server.port 80 --server.maxUploadSize 1024 --deprecation.showPyplotGlobalUse false
+CMD streamlit run xai_healthcare_app.py --server.port 80 --server.maxUploadSize 1024 --deprecation.showPyplotGlobalUse false
