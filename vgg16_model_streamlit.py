@@ -38,7 +38,6 @@ def get_device():
     '''
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print("Using " + torch.cuda.get_device_name(device))
-    # device = torch.device("cpu")
     
     return device
 
@@ -65,7 +64,7 @@ def load_model(file_path):
 #                         Define Image Transform Function
 #----------------------------------------------------------------------------
 
-def img_transform(path):
+def img_transform(img):
     '''
     Image transform function
     '''
@@ -79,7 +78,7 @@ def img_transform(path):
         mean=[0.485, 0.456, 0.406],
         std=[0.229, 0.224, 0.225]
      )
-    img = Image.open(path)
+    #img = Image.open(path)
     transformed_img = transform(img)
     input = transform_normalize(transformed_img)
     input = input.unsqueeze(0)
@@ -90,7 +89,7 @@ def img_transform(path):
 #                         Define Image Transform Function
 #----------------------------------------------------------------------------
 
-def img_trans(path):
+def img_trans(img):
     '''
     Image transform without returning an input
     '''
@@ -99,7 +98,7 @@ def img_trans(path):
      transforms.CenterCrop(224),
      transforms.ToTensor()
     ])
-    img = Image.open(path)
+    #img = Image.open(path)
     img_r = transform(img)
     return img_r
 
@@ -175,20 +174,20 @@ def get_preprocess_transform():
 #                         Batch Prediction
 #---------------------------------------------------------------------------- 
 
-def batch_predict(images):
+# def batch_predict(images):
 
-    preprocess_transform = get_preprocess_transform()
+#     preprocess_transform = get_preprocess_transform()
 
-    model.eval()
-    batch = torch.stack(tuple(preprocess_transform(i) for i in images), dim=0)
+#     model.eval()
+#     batch = torch.stack(tuple(preprocess_transform(i) for i in images), dim=0)
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model.to(device)
-    batch = batch.to(device)
+#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#     model.to(device)
+#     batch = batch.to(device)
     
-    logits = model(batch)
-    probs = F.softmax(logits, dim=1)
-    return probs.detach().cpu().numpy()
+#     logits = model(batch)
+#     probs = F.softmax(logits, dim=1)
+#     return probs.detach().cpu().numpy()
 
 #----------------------------------------------------------------------------
 #                         Main execution

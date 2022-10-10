@@ -3,6 +3,8 @@ ENV TORCH_CUDA_ARCH_LIST=Turing
 ARG TORCH_CUDA_ARCH_LIST=Turing
 ENV DEBIAN_FRONTEND="noninteractive" TZ="America/Vancouver"
 ADD https://xai-healthcare.s3.amazonaws.com/vgg16_ft.pth .
+ADD https://xai-healthcare.s3.amazonaws.com/trns_model.pt .
+ADD https://xai-healthcare.s3.amazonaws.com/model_rn50_v2.pth .
 COPY . /usr/app
 EXPOSE 80
 WORKDIR /usr/app
