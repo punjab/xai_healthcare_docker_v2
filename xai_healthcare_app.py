@@ -21,17 +21,17 @@ from pathlib import Path
 #                         Path to Files
 #----------------------------------------------------------------------------
 
-vgg16_path = '/home/jmwolf/repos/XAI_Healthcare/model_dev/vgg16_ft.pth'
+vgg16_path = './vgg16_ft.pth'
 vgg16_model = load_model(vgg16_path)
 # File load debug
 # st.write(vgg16_model)
 
-rn50_path = '/home/jmwolf/repos/XAI_Healthcare/model_dev/model_rn50_v2_ft.pth'
+rn50_path = './model_rn50_v2_ft.pth'
 rn50_model = rn50_load_model(rn50_path)
 # File load debug
 # st.write(rn50_model)
 
-vit_path = '/home/jmwolf/repos/XAI_Healthcare/model_dev/trns_model.pt'
+vit_path = './trns_model.pt'
 vit_model = vit_load_model(vit_path)
 # File load debug
 # st.write(vit_model)
