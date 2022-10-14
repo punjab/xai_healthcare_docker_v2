@@ -29,7 +29,7 @@ vgg16_model = load_model(vgg16_path)
 # File load debug
 # st.write(vgg16_model)
 
-rn50_path = 'model_rn50_v2.pth'
+rn50_path = 'model_rn50_v2_ft.pth'
 rn50_model = rn50_load_model(rn50_path)
 # File load debug
 # st.write(rn50_model)
